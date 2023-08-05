@@ -37,8 +37,9 @@ describe('On DemoBlaze', () => {
         //     cy.get('.confirm').click();
         // })
 
+*************************
 
-## **How to view "About us "**
+## **How to view "About us**
 
         // it('About us', () => {
         //     cy.visit('https://www.demoblaze.com/');
@@ -50,7 +51,9 @@ describe('On DemoBlaze', () => {
 ## **How to buy products with an account/ How to sign up / How to login**
 
 describe('On Store', () => {
+
     it('Purchase', () =>{
+    
         cy.visit('https://automationteststore.com/');
         cy.get('#block_frame_bestsellers_1771 > .thumbnails > :nth-child(3) > .thumbnail > :nth-child(1) > img').click();
         cy.get('#option347767').click();
