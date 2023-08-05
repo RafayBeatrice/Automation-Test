@@ -122,3 +122,4 @@ describe('On Store', () => {
     cy.get('#checkout_btn').click();
     })
 })
+
