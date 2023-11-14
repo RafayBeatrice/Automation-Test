@@ -1,5 +1,112 @@
 # Automation-Test
 
+
+
+## **Choose Yes or No Button**
+
+/// <reference types= "cypress"/>
+
+describe('Validate Checkbox & Radio Button', function () {
+ 
+  
+  it( 'Test Yes and Check', function () {
+    cy.visit('https://demo.guru99.com/test/ajax.html')
+    cy.get('input[type="radio"]').check('Yes')
+    cy.get('#buttoncheck').click()
+  })
+
+  it('Test No and Check', function() {
+    cy.visit('https://demo.guru99.com/test/ajax.html')
+    cy.get('input[type="radio"]').check('No')
+    cy.get('#buttoncheck').click()
+  })
+
+  it('Test Yes, Check and reset together', function(){
+    cy.visit('https://demo.guru99.com/test/ajax.html')
+    cy.get('input[type="radio"]').check('Yes')
+    cy.get('#buttoncheck').click()
+    cy.get('[type="reset"]').click()
+
+})
+it('Test No, Check and reset together', function(){
+  cy.visit('https://demo.guru99.com/test/ajax.html')
+  cy.get('input[type="radio"]').check('No')
+  cy.get('#buttoncheck').click()
+  cy.get('[type="reset"]').click()
+
+})
+  
+})
+
+## **How to delete a Customer**
+
+// <reference types= "cypress"/>
+
+describe('Validate Checkbox & Radio Button', function () {
+ 
+  
+  it( 'Test Yes and Check', function () {
+    cy.visit('https://demo.guru99.com/test/delete_customer.php')
+    cy.get(':nth-child(2) > :nth-child(2) > input').type('1111')
+    cy.get('[type="submit"]').click()
+    cy.on('window:confirm', (AcceptConfirm) => 
+    
+    expect(AcceptConfirm).to.contains('Do you really want to delete this Customer?')
+    )}
+  )}
+)
+
+
+
+## **How to Upload File**
+
+
+/// <reference types= "cypress"/>
+
+describe('Test Upload File ', function () {
+  it('Upload File', function(){
+    cy.once('uncaught:exception', () => false);
+    
+  
+    cy.visit('https://demo.guru99.com/test/upload/')
+
+    const myFile = '4213602.png'
+    cy.get('#uploadfile_0').attachFile(myFile)
+    cy.get('inplut[type="checkbox"]').check()
+    cy.get('#submitbutton').click()
+  })
+})
+## **Check the Radio and Checkbox**
+
+/// <reference types= "cypress"/>
+
+describe('Validate Checkbox & Radio Button', function () {
+ 
+/*
+ it( 'Validate checkbox', function () {
+
+    cy.visit('https://demo.guru99.com/test/radio.html')
+  //check all Boxes
+    cy.get('input[type="checkbox"]').check()
+  //Uncheck all Boxes
+    cy.get('input[type="checkbox"]').uncheck()
+  //Check one specific checkbox
+    cy.get('input[type="checkbox"]').check('checkbox2');
+})
+*/
+it('Validate Radio Button', function(){
+
+   cy.visit('https://demo.guru99.com/test/radio.html')
+//Check first Radio Button
+   cy.get('input[type="radio"]').first().check()
+//Check one specific Radio Button
+   cy.get('input[type="radio"]').check('Option 3')
+
+})
+})
+
+
+
 ## **How to log in account**
 
 
